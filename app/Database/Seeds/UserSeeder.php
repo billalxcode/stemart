@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
 
         for ($i = 0; $i < 5; $i++) {
             $faker2 = Factory::create("id_ID");
-            $data[][] = [
+            $data[] = [
                 'email' => $faker2->email,
                 'username' => $faker2->userName,
                 'firstname' => $faker2->firstName,
@@ -41,5 +41,9 @@ class UserSeeder extends Seeder
                 'role'=> 'customer'
             ];
         }
+
+        $table = $this->db->table('users');
+        $table->insertBatch($data);
+        echo "Success seed for users data";
     }
 }

@@ -33,12 +33,22 @@
                             <div class="card-header">
                                 <h4>Login to your acount</h4>
                             </div>
-
+                        
                             <div class="card-body">
+                                <!-- <?= (session()->getFlashdata('error') ? var_dump(session()->getFlashdata('error')) : "") ?> -->
+                                <?php if (session()->getFlashdata('error')): ?>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="alert alert-danger">
+                                                <?= session()->getFlashdata('error') ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endif ?>
                                 <form method="POST" action="<?= current_url() ?>" class="needs-validation" novalidate="" autocomplete="off">
                                     <div class="form-group">
                                         <label for="email" class="control-label">Email</label>
-                                        <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
+                                        <input id="email" type="email" class="form-control" name="email" tabindex="1" value="<?= old('email') ?>" required autofocus>
                                         <div class="invalid-feedback">
                                             Please fill in your email
                                         </div>

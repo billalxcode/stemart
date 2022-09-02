@@ -52,6 +52,11 @@ class ProductMigrate extends Migration
                 'type' => 'INT',
                 'constraint' => 255
             ],
+            'product_sales' => [
+                'type' => 'INT',
+                'constraint' => 25,
+                'null' => true
+            ],
             'is_active' => [
                 'type' => "ENUM('true','false')"
             ],

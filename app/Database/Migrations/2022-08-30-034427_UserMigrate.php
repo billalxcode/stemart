@@ -51,7 +51,7 @@ class UserMigrate extends Migration
             'created_at' => [
                 'type' => 'DATETIME'
             ],
-            'update_at' => [
+            'updated_at' => [
                 'type' => 'DATETIME'
             ],
             'deleted_at' => [

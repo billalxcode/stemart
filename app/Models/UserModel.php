@@ -44,8 +44,46 @@ class UserModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
+    function generate_token() {
+        $alphabets = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789!@#$%^&*_+-=";
+
+        $res = '';
+        $randx = random_int(30, 100);
+        for ($i = 0; $i < $randx; $i++) {
+            $randy = random_int(0, strlen($alphabets) - 1);
+            $res .= $alphabets[$randy];
+        }
+
+        $hashes = hash('sha256', $res);
+        return "token:" . $hashes;
+    }
+
     public function valid_token($token) {
-        $data = $this->select('id')->where('refresh_token', $token)->first();
+        $data = $this->select('id,role')->where('refresh_token', $token)->first();
         return $data;
+    }
+
+    public function valid_email($email) {
+        $data = $this->where('email', $email)->orderBy('id')->first();
+        return $data;
+    }
+
+    public function update_refresh_token($id) {
+        $token = $this->generate_token();
+        $this->update($id, 
+            [
+                'refresh_token' => $token
+            ]
+        );
+
+        return $token;
+    }
+
+    public function update_refresh_token_null($id) {
+        $this->update($id, [
+            'refresh_token' => null
+        ]);
+
+        return true;
     }
 }
