@@ -67,23 +67,28 @@ class UserModel extends Model
         $data = $this->where('email', $email)->orderBy('id')->first();
         return $data;
     }
-
+    
     public function update_refresh_token($id) {
         $token = $this->generate_token();
         $this->update($id, 
-            [
-                'refresh_token' => $token
+        [
+            'refresh_token' => $token
             ]
         );
-
+        
         return $token;
     }
-
+    
     public function update_refresh_token_null($id) {
         $this->update($id, [
             'refresh_token' => null
         ]);
-
+        
         return true;
+    }
+
+    public function find_all_by_id($userid) {
+        $data = $this->where("id", $userid)->first();
+        return $data;
     }
 }

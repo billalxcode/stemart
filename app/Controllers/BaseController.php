@@ -68,4 +68,17 @@ abstract class BaseController extends Controller
     public function renderOnce($name) {
         return view($name, $this->context);
     }
+
+    public function set_user_data() {
+        $session = \Config\Services::session();
+        $userModel = new \App\models\UserModel();
+
+        $refresh_token = $session->get("token");
+        
+        $mtoken_data = $userModel->valid_token($refresh_token);
+        if ($mtoken_data) {
+            $userData = $userModel->find_all_by_id($mtoken_data['id']);
+            $this->set_context('userData', $userData);
+        }
+    }
 }
