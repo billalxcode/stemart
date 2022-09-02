@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use CodeIgniter\I18n\Time;
 use CodeIgniter\Model;
 
 class UserModel extends Model
@@ -89,6 +90,13 @@ class UserModel extends Model
 
     public function find_all_by_id($userid) {
         $data = $this->where("id", $userid)->first();
+
+        $firstname = $data['firstname'];
+        $lastname = $data['lastname'];
+        $data['fullname'] = $firstname . ' ' . $lastname;
+        
+        $updated_at = new Time($data['updated_at']);
+        $data['logged_in'] = $updated_at->humanize();
         return $data;
     }
 }
