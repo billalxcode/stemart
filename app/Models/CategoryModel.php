@@ -41,4 +41,14 @@ class CategoryModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function valid_id($catid) {
+        $data = $this->select('category_name,category_slug')->where('id', $catid)->first();
+        return $data;
+    }
+
+    public function get_category_name($id) {
+        $data = $this->select("category_name")->where('id', $id)->first();
+        return $data['category_name'];
+    }
 }

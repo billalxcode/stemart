@@ -46,7 +46,7 @@
                                     <div class="col-lg-6 col-md-12 col-sm-12">
                                         <div class="form-group">
                                             <label for="product_name">Nama Produk</label>
-                                            <input type="text" name="product_name" id="product_name" class="form-control">
+                                            <input type="text" name="product_name" id="product_name" class="form-control" value="<?= old('product_name') ?>">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-12 col-sm-12">
@@ -62,18 +62,18 @@
                                     <div class="col-12">
                                         <label for="product_summary">Ringkasan</label>
 
-                                        <textarea name="product_summary" id="product_summary" class="summernote"></textarea>
+                                        <textarea name="product_summary" id="product_summary" class="summernote"><?= old('product_summary') ?></textarea>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 col-sm-12">
                                         <label for="product_price">Harga jual</label>
-                                        <input type="text" name="product_price" id="product_price" class="form-control">
+                                        <input type="text" name="product_price" id="product_price" class="form-control"  value="<?= old('product_price') ?>">
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-12">
                                         <label for="product_stock">Stok tersedia</label>
-                                        <input type="number" name="product_stock" id="product_stock" class="form-control">
+                                        <input type="number" name="product_stock" id="product_stock" class="form-control"  value="<?= old('product_stock') ?>">
                                     </div>
                                     <div class="col-lg-2 col-md-3 col-sm-12">
                                         <label for="product_status">Status</label>
