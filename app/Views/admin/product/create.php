@@ -23,9 +23,25 @@
 
             <div class="row">
                 <div class="col-12">
+                    <?php if (session()->getFlashdata('error')): ?>
+                        <div class="alert alert-danger">
+                            <?= session()->getFlashdata('error') ?>
+                        </div>
+                    <?php elseif (session()->getFlashdata('warning')): ?>
+                        <div class="alert alert-warning">
+                            <?= session()->getFlashdata('warning') ?>
+                        </div>
+                    <?php elseif (session()->getFlashdata('success')): ?>
+                        <div class="alert alert-success">
+                            <?= session()->getFlashdata('sucess') ?>
+                        </div>
+                    <?php endif ?>
+                </div>
+                <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="<?= base_url('admin/products/save') ?>" method="post" autocomplete="off">
+                            <form action="<?= base_url('admin/products/save') ?>" method="post" autocomplete="off" enctype="multipart/form-data">
+                                <?= csrf_field() ?>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-12 col-sm-12">
                                         <div class="form-group">
@@ -71,6 +87,18 @@
                                         <select name="product_location" id="product_location" class="form-control selectric">
                                             <option value="majalengka">Majalengka</option>
                                         </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="product_image">Upload gambar</label>
+                                        <input type="file" class="form-control" id="product_image" name="product_image">
+                                    </div>
+                                </div>
+                                <div class="row my-4">
+                                    <div class="col-12">
+                                        <button class="btn btn-primary rounded" type="submit">Next</button>
                                     </div>
                                 </div>
                             </form>

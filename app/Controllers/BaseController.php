@@ -95,4 +95,9 @@ abstract class BaseController extends Controller
         ];
         $this->set_context('breadchumbs', $breadchumbs);
     }
+
+    public function render_error($code) {
+        $this->response->setStatusCode(403);
+        return $this->renderOnce('errors/' . $code . '.php');
+    }
 }

@@ -16,6 +16,7 @@ class Auth extends BaseController
     }
 
     public function login() {
+        helper('form');
         $this->set_context('title', 'Stemart Login');
 
         $rules = [

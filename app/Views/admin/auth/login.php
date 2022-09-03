@@ -46,6 +46,7 @@
                                     </div>
                                 <?php endif ?>
                                 <form method="POST" action="<?= current_url() ?>" class="needs-validation" novalidate="" autocomplete="off">
+                                    <?= csrf_field() ?>
                                     <div class="form-group">
                                         <label for="email" class="control-label">Email</label>
                                         <input id="email" type="email" class="form-control" name="email" tabindex="1" value="<?= old('email') ?>" required autofocus>
