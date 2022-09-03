@@ -41,10 +41,15 @@ $routes->get('/', 'Home::index');
 
 $routes->group('/admin', function (RouteCollection $routes) {
     $routes->get("", "Admin\Dashboard::index", ['filter' => 'adminfilter']);
-    $routes->get("logout", "Admin\Auth::logout");
+    $routes->get("logout", "Admin\Auth::logout", ['filter' => 'adminfilter']);
     
     $routes->get("auth", 'Admin\Auth::login');
     $routes->post("auth", 'Admin\Auth::login');
+
+    $routes->group('products', ['filter' => 'adminfilter'], function (RouteCollection $routes) {
+        $routes->get("create", "Admin\Product::create");
+        $routes->post("save", "Admin\Product::save");
+    });
 });
 
 /*

@@ -57,8 +57,8 @@ class ProductMigrate extends Migration
                 'constraint' => 25,
                 'null' => true
             ],
-            'is_active' => [
-                'type' => "ENUM('true','false')"
+            'product_status' => [
+                'type' => "ENUM('active','inactive')"
             ],
             'created_at' => [
                 'type' => 'DATETIME'

@@ -71,7 +71,7 @@ abstract class BaseController extends Controller
 
     public function set_user_data() {
         $session = \Config\Services::session();
-        $userModel = new \App\models\UserModel();
+        $userModel = new \App\Models\UserModel();
 
         $refresh_token = $session->get("token");
         
@@ -80,5 +80,19 @@ abstract class BaseController extends Controller
             $userData = $userModel->find_all_by_id($mtoken_data['id']);
             $this->set_context('userData', $userData);
         }
+    }
+
+    public function set_breadchumb($name, $url, $isactive = false) {
+        if (!isset($this->context['breadchumbs'])) {
+            $this->set_context('breadchumbs', []);
+        }
+
+        $breadchumbs = $this->context['breadchumbs'];
+        $breadchumbs[] = [
+            'name' => $name,
+            'url' => $url,
+            'active' => $isactive
+        ];
+        $this->set_context('breadchumbs', $breadchumbs);
     }
 }
