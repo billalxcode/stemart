@@ -28,6 +28,9 @@ class CategoryMigrate extends Migration
                 'type' => 'INT',
                 'constraint' => 255
             ],
+            'status' => [
+                'type' => "ENUM('active','inactive')"
+            ],
             'created_at' => [
                 'type' => 'DATETIME'
             ],

@@ -50,6 +50,10 @@ $routes->group('/admin', function (RouteCollection $routes) {
         $routes->get("create", "Admin\Product::create");
         $routes->post("save", "Admin\Product::save");
     });
+
+    $routes->group("category", ['filter' => 'adminfilter'], function (RouteCollection $routes) {
+        $routes->get("", "Admin\Category::index");
+    });
 });
 
 /*
