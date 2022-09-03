@@ -23,15 +23,15 @@
 
             <div class="row">
                 <div class="col-12">
-                    <?php if (session()->getFlashdata('error')): ?>
+                    <?php if (session()->getFlashdata('error')) : ?>
                         <div class="alert alert-danger">
                             <?= session()->getFlashdata('error') ?>
                         </div>
-                    <?php elseif (session()->getFlashdata('warning')): ?>
+                    <?php elseif (session()->getFlashdata('warning')) : ?>
                         <div class="alert alert-warning">
                             <?= session()->getFlashdata('warning') ?>
                         </div>
-                    <?php elseif (session()->getFlashdata('success')): ?>
+                    <?php elseif (session()->getFlashdata('success')) : ?>
                         <div class="alert alert-success">
                             <?= session()->getFlashdata('sucess') ?>
                         </div>
@@ -53,7 +53,13 @@
                                         <label for="product_category">Kategori Produk</label>
 
                                         <select name="product_category" id="product_category" class="form-control selectric">
-                                            <option>No selected</option>
+                                            <?php if (isset($categories) && count($categories) != 0) : ?>
+                                                <?php foreach ($categories as $category) : ?>
+                                                    <option value="<?= $category['id'] ?>"><?= $category['category_name'] ?></option>
+                                                <?php endforeach ?>
+                                            <?php else : ?>
+                                                <option>No selected</option>
+                                            <?php endif ?>
                                         </select>
                                     </div>
                                 </div>
@@ -61,7 +67,6 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <label for="product_summary">Ringkasan</label>
-
                                         <textarea name="product_summary" id="product_summary" class="summernote"><?= old('product_summary') ?></textarea>
                                     </div>
                                 </div>
@@ -69,11 +74,11 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 col-sm-12">
                                         <label for="product_price">Harga jual</label>
-                                        <input type="text" name="product_price" id="product_price" class="form-control"  value="<?= old('product_price') ?>">
+                                        <input type="text" name="product_price" id="product_price" class="form-control" value="<?= old('product_price') ?>">
                                     </div>
                                     <div class="col-lg-3 col-md-3 col-sm-12">
                                         <label for="product_stock">Stok tersedia</label>
-                                        <input type="number" name="product_stock" id="product_stock" class="form-control"  value="<?= old('product_stock') ?>">
+                                        <input type="number" name="product_stock" id="product_stock" class="form-control" value="<?= old('product_stock') ?>">
                                     </div>
                                     <div class="col-lg-2 col-md-3 col-sm-12">
                                         <label for="product_status">Status</label>

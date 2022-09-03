@@ -85,7 +85,9 @@ class Auth extends BaseController
         if ($islogged && $mtoken) {
             $mtoken_data = $this->userModel->valid_token($mtoken);
             if ($mtoken_data && $mtoken_data['role'] == 'admin') {
+                $this->userModel->update_refresh_token_null($mtoken_data['id']);
 
+                return redirect()->to('admin/auth');
             } else {
                 $this->response->setStatusCode(403);
                 return view('errors/403');

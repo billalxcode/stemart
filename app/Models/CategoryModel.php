@@ -51,4 +51,45 @@ class CategoryModel extends Model
         $data = $this->select("category_name")->where('id', $id)->first();
         return $data['category_name'];
     }
+
+    public static function slugify($text, string $divider = '-')
+    {
+        // Thanks to https://stackoverflow.com/a/2955878
+        // replace non letter or digits by divider
+        $text = preg_replace('~[^\pL\d]+~u', $divider, $text);
+
+        // transliterate
+        $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+
+        // remove unwanted characters
+        $text = preg_replace('~[^-\w]+~', '', $text);
+
+        // trim
+        $text = trim($text, $divider);
+
+        // remove duplicate divider
+        $text = preg_replace('~-+~', $divider, $text);
+
+        // lowercase
+        $text = strtolower($text);
+
+        if (empty($text)) {
+            return 'n-a';
+        }
+
+        return $text;
+    }
+
+    public function generate_slugify() {
+        $alphabets = 'abcdefghijklmnopqrstuvwxyz1234567890';
+        $randx = random_int(30, 100);
+        $text = '';
+        for ($i = 0; $i < $randx; $i++) {
+            $randy = random_int(0, strlen($alphabets) - 1);
+            $text .= $alphabets[$randy];
+        }
+
+        $hashes = hash('sha256', $text);
+        return $hashes;
+    }
 }

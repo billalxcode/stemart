@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/modules/owlcarousel2/dist/assets/owl.carousel.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/modules/owlcarousel2/dist/assets/owl.theme.default.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/modules/jquery-selectric/selectric.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/modules/datatables/datatables.min.css') ?>">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
@@ -58,10 +59,18 @@
     <script src="<?= base_url('assets/modules/summernote/summernote-bs4.js') ?>"></script>
     <script src="<?= base_url('assets/modules/chocolat/dist/js/jquery.chocolat.min.js') ?>"></script>
     <script src="<?= base_url('assets/modules/jquery-selectric/jquery.selectric.min.js') ?>"></script>
+    <script src="<?= base_url('assets/modules/datatables/datatables.min.js') ?>"></script>
 
     <!-- Page Specific JS File -->
     <script src="<?= base_url('assets/js/page/index.js') ?>"></script>
-
+    <script>
+        $(document).ready(function() {
+            let table = $("table.table")
+            if (table.length >= 1) {
+                table.DataTable()
+            }
+        })
+    </script>
     <!-- Template JS File -->
     <script src="<?= base_url('assets/js/scripts.js') ?>"></script>
     <script src="<?= base_url('assets/js/custom.js') ?>"></script>

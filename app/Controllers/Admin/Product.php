@@ -30,6 +30,9 @@ class Product extends BaseController
         $this->set_breadchumb("Product", base_url('admin/products'), false);
         $this->set_breadchumb("Create", "", true);
 
+        $categories = $this->categoryModel->findAll();
+        $this->set_context('categories', $categories);
+        
         return $this->renderOnce("admin/product/create");
     }
 
