@@ -49,7 +49,11 @@ class CategoryModel extends Model
 
     public function get_category_name($id) {
         $data = $this->select("category_name")->where('id', $id)->first();
-        return $data['category_name'];
+        if ($data) {
+            return $data['category_name'];
+        } else {
+            return null;
+        }
     }
 
     public static function slugify($text, string $divider = '-')

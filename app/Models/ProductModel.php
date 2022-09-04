@@ -17,7 +17,8 @@ class ProductModel extends Model
     protected $allowedFields    = [
         'product_name', 'product_slug', 'product_price',
         'product_summary', 'product_stock', 'product_category',
-        'product_thumb', 'product_discount', 'product_location'
+        'product_thumb', 'product_discount', 'product_location',
+        'product_status'
     ];
 
     // Dates
@@ -43,6 +44,11 @@ class ProductModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function valid_id($product_id) {
+        $data = $this->select('product_name')->where('id', $product_id)->first();
+        return $data;
+    }
 
     public static function slugify($text, string $divider = '-')
     {
@@ -73,6 +79,23 @@ class ProductModel extends Model
     }
 
     public function get_all_products() {
-        
+        helper('number_helper');
+        $categoryModel = new \App\Models\CategoryModel();
+
+        $data_products = $this->orderBy('product_name')->findAll();
+        $data_products_real = [];
+        foreach ($data_products as $row) {
+            $rupiah_converted = rupiah($row['product_price']);
+
+            $product_category = $row['product_category'];
+
+            $category_data = $categoryModel->get_category_name($product_category);
+            $row['product_category'] = $category_data;
+            $row['product_rupiah'] = $rupiah_converted;
+
+            array_push($data_products_real, $row);
+        }
+
+        return $data_products_real;
     }
 }

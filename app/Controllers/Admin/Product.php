@@ -19,6 +19,23 @@ class Product extends BaseController
         $this->categoryModel = new CategoryModel();
     }
     
+    public function index() {
+        helper('form');
+
+        $this->set_user_data();
+        $this->set_context('title', "Kelola Produk");
+        
+        // Set a breadchumb
+        $this->set_breadchumb('Dashboard', base_url('admin', false));
+        $this->set_breadchumb("Produk", base_url('admin/products'), false);
+        $this->set_breadchumb("Kelola", "", true);
+
+        $products = $this->productModel->get_all_products();
+        $this->set_context('products', $products);
+        
+        return $this->renderOnce('admin/product/manage');
+    }
+
     public function create() {
         helper('form');
         $this->set_user_data();
@@ -98,9 +115,8 @@ class Product extends BaseController
                 return redirect()->back()->withInput();
             }
 
-            if (isset($product_category) && $this->categoryModel->valid_id($product_category)) {
-                $product_category = $this->categoryModel->get_category_name($product_category);
-            } else {
+            if (!isset($product_category) &&! $this->categoryModel->valid_id($product_category)) {
+                // $product_category = $this->categoryModel->get_category_name($product_category);
                 $product_category = null;
             }
 
@@ -110,7 +126,7 @@ class Product extends BaseController
                 'product_category'  => $product_category,
                 'product_price'     => $product_price,
                 'product_summary'   => $product_summary,
-                'produt_stock'      => $product_stock,
+                'product_stock'      => $product_stock,
                 'product_thumb'     => base_url('uploads/images/' . $filename),
                 'product_discount'  => null,
                 'product_location'  => $product_location
@@ -120,6 +136,26 @@ class Product extends BaseController
 
             $this->session->setFlashdata('success', 'Berhasil menyimpan produk');
 
+            return redirect()->back();
+        } else {
+            $this->response->setStatusCode(403);
+            return $this->renderOnce("errors/403");
+        }
+    }
+
+    public function delete() {
+        helper("form");
+
+        $method = $this->request->getMethod();
+        if ($method == "post") {
+            $product_id = $this->request->getPost('product_id');
+
+            if ($this->productModel->valid_id($product_id)) {
+                $this->productModel->delete($product_id);
+                $this->session->setFlashdata('success', 'Berhasil menghapus produk');
+            } else {
+                $this->session->setFlashdata('error', 'Gagal menghapus produk, silahkan coba lagi');
+            }
             return redirect()->back();
         } else {
             $this->response->setStatusCode(403);
