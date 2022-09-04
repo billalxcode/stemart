@@ -39,16 +39,18 @@ class ProductMigrate extends Migration
             ],
             'product_category' => [
                 'type' => 'INT',
-                'constraint' => 25
+                'constraint' => 25,
+                'null' => true
             ],
             'product_thumb' => [
                 'type' => 'TEXT',
             ],
             'product_discount' => [
                 'type' => 'INT',
-                'constraint' => 25
+                'constraint' => 25,
+                'null' => true
             ],
-            'product_locaion' => [
+            'product_location' => [
                 'type' => 'INT',
                 'constraint' => 255
             ],

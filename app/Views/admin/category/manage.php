@@ -50,7 +50,7 @@
                                 <div class="row">
                                     <div class="col-12 mb-3">
                                         <label for="category_name">Nama Kategori</label>
-                                        <input type="text" name="category_name" id="category_name" class="form-control" value="<?= old('category_name') ?>" placeholder="Nama Kategori">
+                                        <input type="text" name="category_name" id="category_name" class="form-control" value="<?= old('category_name') ?>" placeholder="Nama Kategori" autofocus>
                                     </div>
                                     <div class="col-12 mb-3">
                                         <label for="category_slug">Slug</label>

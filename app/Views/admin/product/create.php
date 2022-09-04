@@ -33,7 +33,7 @@
                         </div>
                     <?php elseif (session()->getFlashdata('success')) : ?>
                         <div class="alert alert-success">
-                            <?= session()->getFlashdata('sucess') ?>
+                            <?= session()->getFlashdata('success') ?>
                         </div>
                     <?php endif ?>
                 </div>

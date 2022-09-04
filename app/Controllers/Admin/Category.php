@@ -29,7 +29,7 @@ class Category extends BaseController
         $this->set_breadchumb("Category", base_url('admin/category'), false);
         $this->set_breadchumb('Kelola', '', true);
         
-        $categories = $this->categoryModel->findAll();
+        $categories = $this->categoryModel->orderBy('category_name')->findAll();
         $this->set_context('categories', $categories);
 
         return $this->renderOnce('admin/category/manage');

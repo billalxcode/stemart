@@ -32,7 +32,7 @@ class Product extends BaseController
 
         $categories = $this->categoryModel->findAll();
         $this->set_context('categories', $categories);
-        
+
         return $this->renderOnce("admin/product/create");
     }
 
@@ -115,6 +115,12 @@ class Product extends BaseController
                 'product_discount'  => null,
                 'product_location'  => $product_location
             ];
+
+            $this->productModel->save($post_data);
+
+            $this->session->setFlashdata('success', 'Berhasil menyimpan produk');
+
+            return redirect()->back();
         } else {
             $this->response->setStatusCode(403);
             return $this->renderOnce("errors/403");
