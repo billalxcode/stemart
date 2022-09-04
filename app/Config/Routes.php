@@ -47,8 +47,10 @@ $routes->group('/admin', function (RouteCollection $routes) {
     $routes->post("auth", 'Admin\Auth::login');
 
     $routes->group('products', ['filter' => 'adminfilter'], function (RouteCollection $routes) {
+        $routes->get("", "Admin\Product::index");
         $routes->get("create", "Admin\Product::create");
         $routes->post("save", "Admin\Product::save");
+        $routes->post('delete', 'Admin\Product::delete');
     });
 
     $routes->group("category", ['filter' => 'adminfilter'], function (RouteCollection $routes) {
