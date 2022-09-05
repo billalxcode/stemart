@@ -106,4 +106,13 @@
 </div>
 
 <?= $this->include("admin/components/change_user_status"); ?>
+<script src="<?= base_url('assets/modules/datatables/datatables.min.js') ?>"></script>
+<script>
+        $(document).ready(function() {
+            let table = $("table.table")
+            if (table.length >= 1) {
+                table.DataTable()
+            }
+        })
+    </script>
 <?= $this->endSection(); ?>

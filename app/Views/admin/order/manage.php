@@ -49,11 +49,11 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Nama Produk</th>
-                                            <th>Harga</th>
-                                            <th>Stok</th>
-                                            <th>Kategori</th>
-                                            <th>Status</th>
+                                            <th>Invoice</th>
+                                            <th>Customer</th>
+                                            <th>Discount</th>
+                                            <th>Produk dibeli</th>
+                                            <th>Subtotal</th>
                                         </tr>
                                     </thead>
                                     <tbody>

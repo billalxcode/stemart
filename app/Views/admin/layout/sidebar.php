@@ -39,7 +39,7 @@
                     <li><a href="auth-forgot-password.html">Baru</a></li>
                     <li><a href="auth-login.html">Dibatalkan</a></li>
                     <li><a href="auth-register.html">Terkirim</a></li>
-                    <li><a href="auth-reset-password.html">Semua</a></li>
+                    <li><a href="<?= base_url('admin/orders') ?>">Semua</a></li>
                 </ul>
             </li>
             <li class="dropdown">

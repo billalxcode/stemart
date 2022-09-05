@@ -46,6 +46,8 @@ $routes->group('/admin', function (RouteCollection $routes) {
     $routes->get("auth", 'Admin\Auth::login');
     $routes->post("auth", 'Admin\Auth::login');
 
+    $routes->post("logout", "Admin\Auth::logout", ['filter' => 'adminfilter']);
+
     $routes->group('products', ['filter' => 'adminfilter'], function (RouteCollection $routes) {
         $routes->get("", "Admin\Product::index");
         $routes->get("create", "Admin\Product::create");
@@ -62,6 +64,10 @@ $routes->group('/admin', function (RouteCollection $routes) {
     $routes->group("customer", ['filter' => 'adminfilter'], function (RouteCollection $routes) {
         $routes->get("", "Admin\Customer::index");
         $routes->post("changeStatus", "Admin\Customer::changeStatus");
+    });
+
+    $routes->group('orders', ['filter' => 'adminfilter'], function (RouteCollection $routes) {
+        $routes->get("", "Admin\Order::manage");
     });
 });
 
