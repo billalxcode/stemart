@@ -7,31 +7,32 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form action="<?= base_url('admin/customer/changeStatus') ?>" method="post">
-                    <input type="hidden" name="customer_id" value="0" id="customer_id">
+            <form action="<?= base_url('admin/customer/changeStatus') ?>" method="post">
+                <?= csrf_field( ) ?>
+                <div class="modal-body">
+                        <input type="hidden" name="customer_username" value="0" id="customer_username">
 
-                    <select name="status" id="" class="selectrict">
-                        <option value="active">Aktif</option>
-                        <option value="inactive">Nonaktif</option>
-                        <option value="blocked">Banned</option>
-                    </select>
-                </form>
-            </div>
-            <div class="modal-footer bg-whitesmoke br">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+                        <select name="status" id="" class="form-control selectric">
+                            <option value="active">Aktif</option>
+                            <option value="inactive">Nonaktif</option>
+                            <option value="blocked">Banned</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer bg-whitesmoke br">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 
 <script>
-    $("#change_user_status").on("click", function() {
-        let data_id = $(this).data("id")
+    $("a#change_user_status").on("click", function() {
+        let data_username = $(this).data("username")
         let modal_status = $("#modalStatus")
         modal_status.modal("show")
-        modal_status.find("form").find("input#customer_id").val(data_id)
+        modal_status.find("form").find("input#customer_username").val(data_username)
     })
 
     $(document).ready(function() {

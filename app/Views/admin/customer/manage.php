@@ -67,7 +67,7 @@
                                                         <div class="bullet"></div>
                                                         <a href="#">Edit</a>
                                                         <div class="bullet"></div>
-                                                        <a href="javascrip" id="change_user_status" data-id="<?= $customer['id'] ?>">Ubah status</a>
+                                                        <a href="#" id="change_user_status" data-username="<?= $customer['username'] ?>">Ubah status</a>
                                                     </div>
                                                 </td>
                                                 <td>

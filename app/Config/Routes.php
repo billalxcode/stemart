@@ -61,6 +61,7 @@ $routes->group('/admin', function (RouteCollection $routes) {
 
     $routes->group("customer", ['filter' => 'adminfilter'], function (RouteCollection $routes) {
         $routes->get("", "Admin\Customer::index");
+        $routes->post("changeStatus", "Admin\Customer::changeStatus");
     });
 });
 

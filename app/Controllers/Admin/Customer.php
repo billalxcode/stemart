@@ -37,13 +37,14 @@ class Customer extends BaseController
 
         $method = $this->request->getMethod();
         if ($method == "post") {
-            $customer_id = $this->request->getPost("customer_d");
+            $customer_username = $this->request->getPost("customer_username");
             $customer_status = $this->request->getPost("status");
 
-            $customer_data = $this->userModel->valid_id($customer_id);
+            $customer_data = $this->userModel->select_role_from_username($customer_username);
+
             if ($customer_data && $customer_data['role'] == 'customer') {
                 if ($customer_status == "active" || $customer_status == "inactive" || $customer_status == 'blocked') {
-                    $this->userModel->update($customer_id, [
+                    $this->userModel->update($customer_data['id'], [
                         'status' => $customer_status
                     ]);
 

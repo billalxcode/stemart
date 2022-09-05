@@ -64,6 +64,11 @@ class UserModel extends Model
         return $data;
     }
     
+    public function select_role_from_username($username) {
+        $data = $this->select("id,role")->where('username', $username)->first();
+        return $data;
+    }
+
     public function valid_token($token) {
         $data = $this->select('id,role')->where('refresh_token', $token)->first();
         return $data;
