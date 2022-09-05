@@ -28,7 +28,7 @@
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i> <span>Customer</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="<?= base_url('admin/customer/create') ?>">Tambah Customer</a></li>
+                    <!-- <li><a class="nav-link" href="<?= base_url('admin/customer/create') ?>">Tambah Customer</a></li> -->
                     <li><a class="nav-link" href="<?= base_url('admin/customer') ?>">Kelola Customer</a></li>
                 </ul>
             </li>

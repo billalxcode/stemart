@@ -58,6 +58,10 @@ $routes->group('/admin', function (RouteCollection $routes) {
         $routes->post("save", "Admin\Category::save");
         $routes->post("delete", "Admin\Category::delete");
     });
+
+    $routes->group("customer", ['filter' => 'adminfilter'], function (RouteCollection $routes) {
+        $routes->get("", "Admin\Customer::index");
+    });
 });
 
 /*

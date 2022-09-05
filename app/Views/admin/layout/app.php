@@ -21,6 +21,8 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/components.css') ?>">
+
+    <script src="<?= base_url('assets/modules/jquery.min.js') ?>"></script>
 </head>
 
 <body>
@@ -44,7 +46,6 @@
     </div>
 
     <!-- General JS Scripts -->
-    <script src="<?= base_url('assets/modules/jquery.min.js') ?>"></script>
     <script src="<?= base_url('assets/modules/popper.js') ?>"></script>
     <script src="<?= base_url('assets/modules/tooltip.js') ?>"></script>
     <script src="<?= base_url('assets/modules/bootstrap/js/bootstrap.min.js') ?>"></script>
@@ -62,7 +63,7 @@
     <script src="<?= base_url('assets/modules/datatables/datatables.min.js') ?>"></script>
 
     <!-- Page Specific JS File -->
-    <script src="<?= base_url('assets/js/page/index.js') ?>"></script>
+    <!-- <script src="<?= base_url('assets/js/page/index.js') ?>"></script> -->
     <script>
         $(document).ready(function() {
             let table = $("table.table")

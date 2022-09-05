@@ -59,6 +59,11 @@ class UserModel extends Model
         return "token:" . $hashes;
     }
 
+    public function valid_id($id) {
+        $data = $this->select('id,role')->where('id', $id)->first();
+        return $data;
+    }
+    
     public function valid_token($token) {
         $data = $this->select('id,role')->where('refresh_token', $token)->first();
         return $data;
@@ -98,5 +103,27 @@ class UserModel extends Model
         $updated_at = new Time($data['updated_at']);
         $data['logged_in'] = $updated_at->humanize();
         return $data;
+    }
+
+    public function get_all_customer() {
+        $customer_data = $this->select('id,email,username,firstname,lastname,phone,address,status')->where('role', 'customer')->orderBy('id')->findAll();
+
+        $customer_data_real = [];
+        foreach ($customer_data as $customer) {
+            if ($customer['firstname'] && $customer['lastname']) {
+                $customer['fullname'] = $customer['firstname'] . ' ' . $customer['lastname'];
+            } else if ($customer['firstname'] && !$customer['lastname']) {
+                $customer['fullname'] = $customer['firstname'];
+            }
+
+            if ($customer['address'] && $customer['address'] >= 20) {
+                $customer['short_address'] = substr($customer['address'], 0, 20) . '...';
+            } else {
+                $customer['short_address'] = $customer['address'];
+            }
+
+            array_push($customer_data_real, $customer);
+        }
+        return $customer_data_real;
     }
 }
