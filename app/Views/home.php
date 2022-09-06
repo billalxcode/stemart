@@ -21,22 +21,29 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link accent rounded navbar-list-item" aria-current="page" href="#">Home</a>
+            <div class="collapse navbar-collapse "  id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto justify-content-center align-items-center">
+                    <li class="nav-item px-2">
+                        <a class="nav-link accent rounded text-white navbar-list-item" aria-current="page" href="#">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item px-2">
                         <a class="nav-link navbar-list-item" aria-current="page" href="#">Product</a>
                     </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link navbar-list-item" aria-current="page" href="#">FAQ</a>
+                    </li>
                 </ul>
+
+                <div class="d-flex mx-auto">
+                    <a class="nav-link navbar-list-item" aria-current="page" href="#">FAQ</a>
+                </div>
             </div>
         </div>
     </nav>
     <div class="d-flex">
         <div class="row">
             <div class="col m-lg-5">
-                <h1 class=" mcenter fw-semibold big "> <span class="text-accent"> Ste</span>Mart</h1>
+                <h1 class="mcenter fw-bold big"> <span class="text-accent"> Ste</span>Mart</h1>
                 <p class="mcenter">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
                 </p>
