@@ -30,12 +30,13 @@ class CartMigrate extends Migration
                 'constraint' => 25
             ],
             'price' => [
-                'type' => 'INT',
+                'type' => 'INT',    
                 'constraint' => 25
             ],
             'discount' => [
                 'type' => 'INT',
-                'constraint' => 25
+                'constraint' => 25,
+                'null' => true
             ],
             'created_at' => [
                 'type' => 'DATETIME'
