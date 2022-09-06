@@ -39,6 +39,8 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->post("login", 'Auth::login');
+
 $routes->group('/admin', function (RouteCollection $routes) {
     $routes->get("", "Admin\Dashboard::index", ['filter' => 'adminfilter']);
     $routes->get("logout", "Admin\Auth::logout", ['filter' => 'adminfilter']);

@@ -16,13 +16,26 @@ class CartMigrate extends Migration
                 'unsigned' => true,
                 'null' => true
             ],
+            'customer_id' => [
+                'type' => "INT",
+                'constraint' => 25,
+                'null' => false
+            ],
             'product_id' => [
                 'type' => 'INT',
-                'constraint' => 255
+                'constraint' => 25
             ],
-            'customer_id' => [
+            'quantity' => [
                 'type' => 'INT',
-                'constraint' => 255
+                'constraint' => 25
+            ],
+            'price' => [
+                'type' => 'INT',
+                'constraint' => 25
+            ],
+            'discount' => [
+                'type' => 'INT',
+                'constraint' => 25
             ],
             'created_at' => [
                 'type' => 'DATETIME'
@@ -36,11 +49,11 @@ class CartMigrate extends Migration
         ]);
 
         $this->forge->addKey('id', true);
-        $this->forge->createTable('carts');
+        $this->forge->createTable('order_item');
     }
 
     public function down()
     {
-        $this->forge->dropTable('carts');
+        $this->forge->dropTable('order_item');
     }
 }
