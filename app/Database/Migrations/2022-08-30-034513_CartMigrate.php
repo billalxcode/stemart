@@ -12,7 +12,7 @@ class CartMigrate extends Migration
             'id' => [
                 'type' => 'INT',
                 'constraint' => 255,
-                'auto_incremenet' => true,
+                'auto_increment' => true,
                 'unsigned' => true,
                 'null' => true
             ],
