@@ -11,10 +11,10 @@ class CartMigrate extends Migration
         $this->forge->addField([
             'id' => [
                 'type' => 'INT',
-                'constraint' => 255,
+                'constraint' => 25,
                 'auto_increment' => true,
                 'unsigned' => true,
-                'null' => true
+                'null' => false
             ],
             'customer_id' => [
                 'type' => "INT",

@@ -16,7 +16,7 @@ class OrderMigrate extends Migration
                 'unsigned' => true,
                 'null' => false
             ],
-            'cart_id' => [
+            'item_id' => [
                 'type' => 'INT',
                 'constraint' => 255,
                 'null' => true
