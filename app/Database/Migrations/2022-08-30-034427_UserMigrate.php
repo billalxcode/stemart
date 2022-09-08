@@ -31,13 +31,15 @@ class UserMigrate extends Migration
             ],
             'phone' => [
                 'type' => 'VARCHAR',
-                'constraint' => 20
+                'constraint' => 20,
+                'null' => true
             ],
             'address' => [
                 'type' => 'TEXT'
             ],
             'refresh_token' => [
-                'type' => 'TEXT'
+                'type' => 'TEXT',
+                'null' => true
             ],
             'password' => [
                 'type' => 'TEXT'

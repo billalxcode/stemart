@@ -48,7 +48,7 @@
                     <li><a class="nav-link" href="errors-503.html">Transaksi Baru</a></li>
                     <li><a class="nav-link" href="errors-403.html">Transaksi Gagal</a></li>
                     <li><a class="nav-link" href="errors-404.html">Transaksi Berhasil</a></li>
-                    <li><a class="nav-link" href="errors-500.html">Semua Transaksi</a></li>
+                    <li><a class="nav-link" href="<?= base_url('admin/transaction') ?>">Semua Transaksi</a></li>
                 </ul>
             </li>
             <li class="menu-header">Pengaturan</li>

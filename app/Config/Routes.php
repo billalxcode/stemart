@@ -41,6 +41,10 @@ $routes->get('/', 'Home::index');
 
 $routes->post("login", 'Auth::login');
 
+$routes->group("products", function (RouteCollection $routes) {
+    $routes->get("", "Product::index");
+}); 
+
 $routes->group('/admin', function (RouteCollection $routes) {
     $routes->get("", "Admin\Dashboard::index", ['filter' => 'adminfilter']);
     $routes->get("logout", "Admin\Auth::logout", ['filter' => 'adminfilter']);
@@ -70,6 +74,11 @@ $routes->group('/admin', function (RouteCollection $routes) {
 
     $routes->group('orders', ['filter' => 'adminfilter'], function (RouteCollection $routes) {
         $routes->get("", "Admin\Order::manage");
+        $routes->post("delete", 'Admin\Order::delete');
+    });
+
+    $routes->group('transaction', ['filter' => 'adminfilter'], function (RouteCollection $routes) {
+        $routes->get("", "Admin\Transaction::index");
     });
 });
 

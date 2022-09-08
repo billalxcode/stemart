@@ -8,6 +8,7 @@ class Product extends BaseController
 {
     public function index()
     {
-        //
+        
+        return $this->renderOnce('product/index');
     }
 }

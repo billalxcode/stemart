@@ -35,11 +35,15 @@ class OrderMigrate extends Migration
             ],
             'total_discount' => [
                 'type' => 'INT',
-                'constraint' => 255
+                'constraint' => 255,
+                'null' => true
             ],
             'subtotal' => [
                 'type' => 'INT',
                 'constraint' => 255
+            ],
+            'status' => [
+                'type' => "ENUM('accept','reject')"
             ],
             'created_at' => [
                 'type' => 'DATETIME'

@@ -1,45 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<?= $this->extend("layout/app"); ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= base_url('assets/modules/bootstrap/css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/native/css/style.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/modules/aos/dist/aos.css') ?>">
-
-    <title>Document</title>
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-bg-custom ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="<?= base_url('assets/img/stemart.svg') ?>" class="navbar-img-custom d-inline-block align-top" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse "  id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto justify-content-center align-items-center">
-                    <li class="nav-item px-2">
-                        <a class="nav-link accent rounded text-white navbar-list-item" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link navbar-list-item" aria-current="page" href="#">Product</a>
-                    </li>
-                    <li class="nav-item px-2">
-                        <a class="nav-link navbar-list-item" aria-current="page" href="#">FAQ</a>
-                    </li>
-                </ul>
-
-                <div class="d-flex mx-auto">
-                    <a class="nav-link navbar-list-item" aria-current="page" href="#">FAQ</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+<?= $this->section("content"); ?>
     <div class="d-flex">
         <div class="row">
             <div class="col m-lg-5">
@@ -95,14 +56,4 @@
             </div>
         </div>
     </div>
-
-    <script src="<?= base_url('assets/modules/jquery.min.js') ?>"></script>
-    <script src="<?= base_url('assets/modules/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-    <script src="<?= base_url('assets/modules/aos/dist/aos.js') ?>"></script>
-    <script>
-        AOS.init();
-    </script>
-
-</body>
-
-</html>
+<?= $this->endSection(); ?>

@@ -98,6 +98,15 @@ class UserModel extends Model
         return true;
     }
 
+    public function get_name_by_id($userid) {
+        $data = $this->select('firstname,lastname')->where('id', $userid)->first();
+
+        $firstname = $data['firstname'];
+        $lastname = $data['lastname'];
+        $data['fullname'] = $firstname . ' ' . $lastname;
+        return $data;
+    }
+
     public function find_all_by_id($userid) {
         $data = $this->where("id", $userid)->first();
 
