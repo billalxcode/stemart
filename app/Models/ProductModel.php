@@ -98,4 +98,29 @@ class ProductModel extends Model
         
         return $data_products_real;
     }
+
+    public function find_by_slug($slug) {
+        helper('number_helper');
+
+        $categoryModel = new \App\Models\CategoryModel();
+
+        $data_products = $this->where('product_slug', $slug)->orderBy('product_name')->findAll();
+        $data_products_real = [];
+
+        foreach ($data_products as $row) {
+            $rupiah_converted = rupiah(
+                $row['product_price']
+            );
+
+            $product_category = $row['product_category'];
+
+            $category_data = $categoryModel->get_category_name($product_category);
+            $row['product_category'] = $category_data;
+            $row['product_rupiah'] = $rupiah_converted;
+
+            array_push($data_products_real, $row);
+        }
+
+        return $data_products_real;
+    }
 }

@@ -43,7 +43,7 @@ $routes->post("login", 'Auth::login');
 
 $routes->group("products", function (RouteCollection $routes) {
     $routes->get("", "Product::index");
-    $routes->get("detail/(:num)", "Product::detail/$1");
+    $routes->get("(:any)", "Product::detail/$1");
 }); 
 
 $routes->group('/admin', function (RouteCollection $routes) {

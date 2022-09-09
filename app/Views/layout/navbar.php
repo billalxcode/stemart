@@ -7,14 +7,14 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0 nav-pills justify-content-center gap-4 ">
-                <li class="nav-item ">
+            <ul class="navbar-nav mx mb-lg-0 nav-pills gap-4 mx-auto">
+                <li class="nav-item">
                     <a class="nav-link accent  text-white btn-primary " aria-current="page" style=" background-color: #656E46;" href="<?= base_url('') ?>">Home</a>
                 </li>
-                <li class="nav-item ">
+                <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('products') ?>">Product</a>
                 </li>
-                <li class="nav-item ">
+                <li class="nav-item">
                     <a class="nav-link" href="#">Hubungi</a>
                 </li>
                 <li class="nav-item dropdown me-3">
