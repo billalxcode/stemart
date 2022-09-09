@@ -15,7 +15,7 @@ class TransactionModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'order_id', 'image_proof', 'amount', 'note', 'status'
+        'order_id', 'image', 'note', 'status', 'notifed'
     ];
 
     // Dates

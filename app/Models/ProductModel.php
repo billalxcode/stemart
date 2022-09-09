@@ -95,7 +95,7 @@ class ProductModel extends Model
 
             array_push($data_products_real, $row);
         }
-
+        
         return $data_products_real;
     }
 }

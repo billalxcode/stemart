@@ -21,13 +21,9 @@ class TransactionMigrate extends Migration
                 'constraint' => 25,
                 'null' => false
             ],
-            'image_proof' => [
+            'image' => [
                 'type' => 'TEXT',
                 'null' => false
-            ],
-            'amount' => [
-                'type' => 'INT',
-                'constraint' => 25
             ],
             'note' => [
                 'type' => "TEXT",
