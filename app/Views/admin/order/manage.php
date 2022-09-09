@@ -61,7 +61,7 @@
                                         foreach ($orders_data as $order) : ?>
                                             <tr>
                                                 <td>
-                                                    <?= $order['invoice'] ?>
+                                                    <?= $order['kode_invoice'] ?>
                                                     <div class="table-links">
                                                         <form action="<?= base_url('admin/orders/delete') ?>" method="post" class="d-inline">
                                                             <?= csrf_field() ?>
@@ -82,10 +82,9 @@
                                                     Tidak diketahui
                                                 </td>
                                                 <td>
-                                                    <?php if (isset($order['order_items'])): ?>
+                                                    <?php if (isset($order['products'])): ?>
                                                         <?php
-                                                            $cart = $order['order_items'][0];
-                                                            $product = $cart['products'];
+                                                            $product = $order['products'][0];
                                                             echo $product['product_name'];
                                                         ?>
                                                     <?php else: ?>

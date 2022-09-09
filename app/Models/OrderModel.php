@@ -15,8 +15,8 @@ class OrderModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'item_id', 'invoice', 'customer_id', 'total_order', 
-        'total_discount', 'subtotal', 'status'
+        'id_produk', 'kode_invoice', 'customer_id', 'total_order', 
+        'total_discount', 'status', 'isnew'
     ];
 
     // Dates
@@ -44,36 +44,29 @@ class OrderModel extends Model
     protected $afterDelete    = [];
 
     public function valid_id($order_id) {
-        $data = $this->select('id,invoice')->where('id', $order_id)->first();
+        $data = $this->select('id,kode_invoice')->where('id', $order_id)->first();
         return $data;
     }
 
     public function get_all_orders() {
-        $cartModel = new \App\Models\CartModel();
         $userModel = new \App\Models\UserModel();
         $productModel = new \App\Models\ProductModel();
 
         $data_temp = $this->select('*')->findAll();
         $data_fix = [];
         foreach ($data_temp as $row) {
-            $cart_data = $cartModel->where('id', $row['item_id'])->findAll();
-            $carts_data = [];
-            foreach ($cart_data as $cart) {
-                $product_id = $cart['product_id'];
-                $products = $productModel->where('id', $product_id)->first();
-                
-                $cart['products'] = $products;
-                array_push($carts_data, $cart);
-            }
+            $product_data = $productModel->where('id', $row['id_produk'])->findAll();
 
             $customer_data = $userModel->get_name_by_id($row['customer_id']);
 
             $row['customers'] = $customer_data;
-            $row['order_items'] = $carts_data;
+            $row['products'] = $product_data;
+
             array_push($data_fix, $row);
         }
         // echo json_encode($data_fix[0]);
         // die();
+
         return $data_fix;
     }
 
