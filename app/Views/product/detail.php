@@ -1,10 +1,16 @@
 <?= $this->extend('layout/app'); ?>
 
 <?= $this->section('content'); ?>
-<div class="container-fluid d-flex">
+<div class="container-fluid d-block">
 	<div class="row m-3  mcenter">
 		<div class="col-3 hide">
+<<<<<<< HEAD
 			<img src="<?= ($product['product_thumb'] != '' ? $product['product_thumb'] : base_url('assets/img/contoh.png')) ?>" style=" width:100%;" class="round float-start " alt="...">
+=======
+			<!-- Gambar / thumbnail -->
+			<img src="<?= base_url('assets/img/contoh.png') ?>" style=" width:100%;" class="round float-start " alt="...">
+
+>>>>>>> 617c2a03650a9ed6aaabafe9956f11deeddfe39b
 		</div>
 		<div class="col-5 mx-3">
 			<div class="row">
@@ -44,9 +50,33 @@
 			</div> -->
 		</div>
 		<div class="col-3 mx-3  "> 
-			<div class="card border rounded">
+			<div class="card card-pembelian rounded">
+				<div class="card-header">
+					<h5 class="text-pembelian">Pembelian</h5>
+				</div>
 				<div class="card-body">
+<<<<<<< HEAD
 					<h5 class="fw-bold">Pembelian</h5>
+=======
+					<form action="<?= base_url('order') ?>" method="post">
+						<div class="form-group mb-4">
+							<label for="jumlah" class="label-atur">Atur Jumlah</label>
+							<input type="number" name="jumlah" id="jumlah" value="1" class="form-control">
+						</div>
+						<div class="form-group mb-3">
+							<div class="row">
+								<div class="col-4">
+									<h5 class="text-subtotal">Subtotal</h5>
+								</div>
+								<div class="col-6">
+									<h3 class="text-subtotal">Rp49.000</h3>
+								</div>
+								<button type="button" class="btn btn-primary mb-2 ">Tam</button>
+								<button type="button" class="btn btn-outline-primary">Primary</button>
+							</div>
+						</div>
+					</form>
+>>>>>>> 617c2a03650a9ed6aaabafe9956f11deeddfe39b
 				</div>
 			</div>
 		</div>

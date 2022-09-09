@@ -19,10 +19,16 @@
 
 		<div class="col-9">
 			
-			<div class="input-group">
-				<span class="input-group-text" id="addon-wrapping">@</span>
-				<button class="btn btn-outline-secondary" type="button">Button</button>
-			</div>
+			<form action="<?= base_url('search') ?>" method="post" class="d-flex justify-content-center align-items-center">
+				<div class="form-gorup">
+					<div class="input-group">
+						<span class="input-group-text">
+							<i class="fa fa-search" aria-hidden="true"></i>
+						</span>
+						<input type="text" class="form-control" placeholder="Cari sesuatu...">
+					</div>
+				</div>
+			</form>
 
 			<h4 class="fw-bold text-center" data-aos="fade-up">Product</h4>
 			<div class="product-group">
