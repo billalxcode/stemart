@@ -16,15 +16,15 @@ class OrderMigrate extends Migration
                 'unsigned' => true,
                 'null' => false
             ],
-            'item_id' => [
+            'id_produk' => [
                 'type' => 'INT',
                 'constraint' => 255,
                 'null' => true
             ],
-            'invoice' => [
+            'kode_invoice' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255
-            ] ,
+            ],
             'customer_id' => [
                 'type' => 'INT',
                 'constraint' => 255
@@ -37,10 +37,6 @@ class OrderMigrate extends Migration
                 'type' => 'INT',
                 'constraint' => 255,
                 'null' => true
-            ],
-            'subtotal' => [
-                'type' => 'INT',
-                'constraint' => 255
             ],
             'status' => [
                 'type' => "ENUM('accept','reject')"
