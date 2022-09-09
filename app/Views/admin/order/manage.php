@@ -53,7 +53,7 @@
                                             <th>Customer</th>
                                             <th>Discount</th>
                                             <th>Produk dibeli</th>
-                                            <th>Subtotal</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>

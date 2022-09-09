@@ -45,6 +45,9 @@ class OrderMigrate extends Migration
             'status' => [
                 'type' => "ENUM('accept','reject')"
             ],
+            'isnew' => [
+                'type' => "ENUM('yes', 'no')"
+            ],
             'created_at' => [
                 'type' => 'DATETIME'
             ],
