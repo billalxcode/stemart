@@ -25,7 +25,7 @@
 						<div class="card round mt-2 box-product" data-aos="fade-up" style="width: 16rem;">
 							<img src="<?= base_url('assets/img/contoh.png') ?>" class="card-img-top " alt="...">
 							<div class="card-body">
-								<a class="card-title card-product-title" href="#">Benih Super Seledri - InFarm</a>
+								<a class="card-title card-product-title" href="<?= base_url('products/detail/' . $i) ?>">Benih Super Seledri - InFarm</a>
 								<h5 class="card-product-price">Rp. 100.000
 									<span class="card-product-discount">Rp. 50.000</span>
 								</h5>
