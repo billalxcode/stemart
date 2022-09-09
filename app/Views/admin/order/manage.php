@@ -63,11 +63,6 @@
                                                 <td>
                                                     <?= $order['invoice'] ?>
                                                     <div class="table-links">
-                                                        <a href="#">View</a>
-                                                        <div class="bullet"></div>
-                                                        <a href="#">Edit</a>
-                                                        <div class="bullet"></div>
-
                                                         <form action="<?= base_url('admin/orders/delete') ?>" method="post" class="d-inline">
                                                             <?= csrf_field() ?>
                                                             <input type="hidden" name="order_id" value="<?= $order['id'] ?>">
