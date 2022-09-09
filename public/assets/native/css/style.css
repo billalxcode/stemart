@@ -151,9 +151,11 @@
 }
 
 .round {
-	border-radius: 30px;
+	border-radius: 15px;
 }
-
+.round-x {
+	border-radius: 20px;
+}
 /* 3.5 Card */
 .card {
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
@@ -835,4 +837,17 @@ small.card-discount {
 	/* padding: 0px 8px 16px; */
 	margin-right: 15px;
 	box-sizing: border-box;
+}
+.faded {
+	color: #00000097;
+}
+.yellow {
+	color: #E08C2F;
+}
+.product-discount {
+	font-style: normal;
+	font-size: 20px;
+	color: rgba(208, 13, 13, 0.45);
+	
+	text-decoration: line-through;
 }

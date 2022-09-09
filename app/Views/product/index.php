@@ -18,6 +18,12 @@
 		</div>
 
 		<div class="col-9">
+			
+			<div class="input-group">
+				<span class="input-group-text" id="addon-wrapping">@</span>
+				<button class="btn btn-outline-secondary" type="button">Button</button>
+			</div>
+
 			<h4 class="fw-bold text-center" data-aos="fade-up">Product</h4>
 			<div class="product-group">
 				<?php for ($i = 0; $i < 15; $i++) : ?>

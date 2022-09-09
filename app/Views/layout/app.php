@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="<?= base_url('assets/native/bootstrap/css/bootstrap.min.css') ?>">
 	<link rel="stylesheet" href="<?= base_url('assets/native/css/style.css') ?>">
 	<link rel="stylesheet" href="<?= base_url('assets/modules/aos/dist/aos.css') ?>">
+	<link rel="stylesheet" href="<?= base_url('assets/modules/fontawesome/css/all.min.css') ?>">
 	<title>Stemart | Produk Unggulan SMKN 1 Maja</title>
 </head>
 
@@ -18,31 +19,12 @@
 
 	<div class="container-fluid footer-bg text-white clearfix mt-5">
 		<section class="d-flex justify-content-center justify-content-lg-between  ">
-			<div>
-				<a href="" class="me-4 text-reset">
-					<i class="fab fa-facebook-f"></i>
-				</a>
-				<a href="" class="me-4 text-reset">
-					<i class="fab fa-twitter"></i>
-				</a>
-				<a href="" class="me-4 text-reset">
-					<i class="fab fa-google"></i>
-				</a>
-				<a href="" class="me-4 text-reset">
-					<i class="fab fa-instagram"></i>
-				</a>
-				<a href="" class="me-4 text-reset">
-					<i class="fab fa-linkedin"></i>
-				</a>
-				<a href="" class="me-4 text-reset">
-					<i class="fab fa-github"></i>
-				</a>
-			</div>
+			
 		</section>
 		<section class="">
 			<div class="container text-center text-md-start mt-5">
 				<div class="row mt-3">
-					<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+					<div class="col-md-3 col-lg-4 col-xl-4 mx-auto mb-4">
 						<h2 class="mb-4 typo">
 							SteMart.
 						</h2>
@@ -51,7 +33,7 @@
 							dikelola oleh SMKN 1 Maja
 						</p>
 					</div>
-					<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+					<div class="col-md-2 col-lg-2 col-xl-3 mx-auto mb-4">
 						<h5 class="text-uppercase fw-bold mb-4">
 							Alamat
 						</h5>
@@ -61,9 +43,9 @@
 							Majalengka, Jawa barat
 						</p>
 					</div>
-					<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-					</div>
-					<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+					<!-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+					</div> -->
+					<div class="col-md-3 col-lg-4 col-xl-4 mx-auto mb-4">
 						<form>
 							<h6 class="text-uppercase fw-bold mb-4">
 								Hubungi Kami
@@ -84,6 +66,8 @@
 	<script src="<?= base_url('assets/modules/jquery.min.js') ?>"></script>
 	<script src="<?= base_url('assets/native/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 	<script src="<?= base_url('assets/modules/aos/dist/aos.js') ?>"></script>
+	<script src="<?= base_url('assets/modules/fontawesome/js/all.min.js') ?>"></script>
+	
 	<script>
 		AOS.init();
 	</script>
