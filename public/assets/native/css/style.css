@@ -851,3 +851,49 @@ small.card-discount {
 	
 	text-decoration: line-through;
 }
+
+.text-pembelian {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 156%;
+	/* or 37px */
+
+	color: rgba(0, 0, 0, 0.95);
+}
+
+.card-pembelian {
+	box-sizing: border-box;
+
+	width: 300px;
+	background: #FFFFFF;
+	border: 1px solid rgba(77, 77, 77, 0.23);
+	box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 20px;
+}
+
+.label-atur {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 156%;
+	/* or 31px */
+
+
+	color: rgba(0, 0, 0, 0.75);
+}
+
+.text-subtotal {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 156%;
+	/* identical to box height, or 30px */
+
+	letter-spacing: -0.01em;
+
+	color: rgba(0, 0, 0, 0.5);
+}
