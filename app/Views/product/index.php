@@ -8,9 +8,9 @@
 				<div class="card-body">
 					<div class="card-title">
 						<div class="list-group">
-							<div class="list-item mb-2 category-active">Pertanian</div>
-							<div class="list-item mb-2 ">Elektronik</div>
-							<div class="list-item mb-2">Aplikasi Digital</div>
+							<a class="list-item mb-2 category-active">Pertanian</a>
+							<a class="list-item mb-2 ">Elektronik</a>
+							<a class="list-item mb-2">Aplikasi Digital</a>
 						</div>
 					</div>
 				</div>

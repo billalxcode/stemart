@@ -855,12 +855,26 @@ small.card-discount {
 }
 
 .category-active {
-	background-color: #CCD5AE;
+	background-color: #78854d;
 	color: white;
-	border-radius: 2px;
 	font-weight: 600;
+	padding: 0px 5px 0px 5px;
+	text-decoration: none;
+	border-radius: 5px;
+	
+}
+.list-item:not(.category-active) {
+	text-decoration: none;
+	color:rgba(0, 0, 0, 0.616);
+	transition: 0.2s;
+	padding: 0px 5px 0px 5px;
+	border-radius: 5px;
 }
 
+.list-item:hover {
+	background-color: #78854d;
+	color: white;
+}
 .product-group {
 	display: block;
     flex-wrap: wrap;
