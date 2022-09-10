@@ -96,4 +96,10 @@ class CategoryModel extends Model
         $hashes = hash('sha256', $text);
         return $hashes;
     }
+
+    public function get_all_names() {
+        $data = $this->select('category_name')->orderBy('category_name')->findAll();
+
+        return $data;
+    }
 }

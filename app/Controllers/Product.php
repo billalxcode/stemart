@@ -7,17 +7,21 @@ use App\Controllers\BaseController;
 class Product extends BaseController
 {
     protected $productModel;
+    protected $categoryModel;
 
     function __construct()
     {
         $this->productModel = new \App\Models\ProductModel();
+        $this->categoryModel = new \App\Models\CategoryModel();
     }
 
     public function index()
     {
         $product_data = $this->productModel->get_all_products();
+        $categories =  $this->categoryModel->get_all_names();
 
         $this->set_context('products', $product_data);
+        $this->set_context('categories', $categories);
 
         return $this->renderOnce('product/index');
     }

@@ -8,9 +8,10 @@
 				<div class="card-body">
 					<div class="card-title">
 						<div class="list-group">
-							<a class="list-item mb-2 category-active">Pertanian</a>
-							<a class="list-item mb-2 ">Elektronik</a>
-							<a class="list-item mb-2">Aplikasi Digital</a>
+							<?php foreach ($categories as $category): ?>
+								<!-- <a class="list-item mb-2 category-active" href="#">Pertanian</a> -->
+								<a class="list-item mb-2 " href="#"><?= $category['category_name'] ?></a>
+							<?php endforeach ?>
 						</div>
 					</div>
 				</div>
