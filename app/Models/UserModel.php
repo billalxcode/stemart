@@ -140,4 +140,6 @@ class UserModel extends Model
         }
         return $customer_data_real;
     }
+
+    public function 
 }
