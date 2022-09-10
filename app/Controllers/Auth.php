@@ -6,8 +6,15 @@ use App\Controllers\BaseController;
 
 class Auth extends BaseController
 {
-    public function index()
+    protected $userModel;
+
+    function __construct()
     {
-        //
+        $this->userModel = new \APp\Models\UserModel();
+    }
+    
+    public function login()
+    {
+        return $this->renderOnce('auth/login');
     }
 }

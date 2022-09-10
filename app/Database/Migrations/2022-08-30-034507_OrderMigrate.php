@@ -39,7 +39,7 @@ class OrderMigrate extends Migration
                 'null' => true
             ],
             'status' => [
-                'type' => "ENUM('accept','reject')"
+                'type' => "ENUM('accept','reject', 'progress')"
             ],
             'isnew' => [
                 'type' => "ENUM('yes', 'no')"

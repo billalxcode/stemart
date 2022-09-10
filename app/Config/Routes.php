@@ -39,12 +39,18 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-$routes->post("login", 'Auth::login');
+$routes->get("login", 'Auth::login');
+$routes->post("login", "Auth::login");
 
 $routes->group("products", function (RouteCollection $routes) {
     $routes->get("", "Product::index");
     $routes->get("(:any)", "Product::detail/$1");
 }); 
+
+$routes->group('order', function (RouteCollection $routes) {
+    $routes->get("", "Order::index");
+    $routes->post("", "Order::save");
+});
 
 $routes->group('/admin', function (RouteCollection $routes) {
     $routes->get("", "Admin\Dashboard::index", ['filter' => 'adminfilter']);

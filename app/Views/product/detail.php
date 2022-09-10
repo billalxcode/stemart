@@ -50,7 +50,7 @@
 				</div>
 				<div class="card-body">
 					<h5 class="fw-bold">Pembelian</h5>
-					<form action="<?= base_url('order') ?>" method="post" id="myform">
+					<form action="<?= base_url('order/save') ?>" method="post" id="myform">
 						<input type="hidden" name="product_id" value="<?= $product['id'] ?>">
 						<input type="hidden" name="product_price" value="<?= $product['product_price'] ?>" id="product_price">
 						<div class="form-group mb-4">
