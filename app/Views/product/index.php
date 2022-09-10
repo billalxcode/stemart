@@ -3,12 +3,12 @@
 <?= $this->section('content'); ?>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-3">
+		<div class="col-3 mt-3">
 			<div class="card round mt-5 box-features" data-aos="fade-up">
 				<div class="card-body">
 					<div class="card-title">
 						<div class="list-group">
-							<?php foreach ($categories as $category): ?>
+							<?php foreach ($categories as $category) : ?>
 								<!-- <a class="list-item mb-2 category-active" href="#">Pertanian</a> -->
 								<a class="list-item mb-2 " href="#"><?= $category['category_name'] ?></a>
 							<?php endforeach ?>
@@ -18,15 +18,16 @@
 			</div>
 		</div>
 
-		<div class="col-9">
-			
-			<form action="<?= base_url('search') ?>" method="post" class="d-flex justify-content-center align-items-center">
+		<div class="col-9 mt-5">
+
+			<form action="<?= base_url('search') ?>" method="post" class=" mb-4 d-flex justify-content-center align-items-center">
 				<div class="form-gorup">
 					<div class="input-group">
-						<span class="input-group-text">
-							<i class="fa fa-search" aria-hidden="true"></i>
+						<span class=" round-x input-group-text" style="background-color: white;">
+								<button style="border:none; background-color: white;" type="submit" href=""><i class="fa fa-search" aria-hidden="true"></i></button>
+							<input type="text" style="border:none;" class="form-control " placeholder="Cari sesuatu...">
 						</span>
-						<input type="text" class="form-control" placeholder="Cari sesuatu...">
+
 					</div>
 				</div>
 			</form>

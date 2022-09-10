@@ -3,6 +3,10 @@
 
 * {
 	font-family: 'Inter', sans-serif;
+	
+}
+.no-select {
+	user-select:none;
 }
 
 .login-bg {
@@ -192,6 +196,12 @@
 
 .round {
 	border-radius: 15px;
+}
+.round-right {
+	border-radius: 0px 20px 20px 0px;
+}
+.round-left {
+	border-radius: 20px 0px 0px 20px;
 }
 .round-x {
 	border-radius: 20px;
@@ -869,6 +879,11 @@ small.card-discount {
 	transition: 0.2s;
 	padding: 0px 5px 0px 5px;
 	border-radius: 5px;
+	
+}
+
+.flexi {
+	height: max-content;
 }
 
 .list-item:hover {

@@ -4,7 +4,7 @@
 	<div class="d-flex mt-4">
 		<div class="row">
 			<div class="col m-lg-5">
-				<h1 class="mcenter fw-bold big mt-4"> <span class="text-accent"> Ste</span>Mart</h1>
+				<h1 class=" no-select mcenter fw-bold big mt-4"> <span class="text-accent"> Ste</span>Mart</h1>
 				<p class="mcenter" style="font-size: 17px">
 					SteMart merupakan aplikasi penyedia produk-produk Teaching Factory SMKN 1 Maja. Jurusan Agribisnis Tanaman Pangan dan Hortikultura (ATPH), Teknik Audio Video (TAV), Rekayasa Perangkat Lunak (RPL) dan Teknik Komputer Jaringan (TKJ). Sebagai produk unggulan hasil karya siswa dari implementasi pembelajaran yang dipelajari di SMKN 1 Maja.
 				</p>
@@ -13,7 +13,7 @@
 				</a>
 			</div>
 			<div class="col hide">
-				<img src="<?= base_url('assets/img/banner.svg') ?> " class="img-fluid mx-right  " alt="Gambar">
+				<img ondragstart="return false;" ondrop="return false;" src="<?= base_url('assets/img/banner.svg') ?> " class="img-fluid mx-right  " alt="Gambar">
 			</div>
 		</div>
 	</div>
