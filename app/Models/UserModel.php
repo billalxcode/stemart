@@ -141,5 +141,7 @@ class UserModel extends Model
         return $customer_data_real;
     }
 
-    public function 
+    public function get_customer_by_username($username) {
+        
+    }
 }

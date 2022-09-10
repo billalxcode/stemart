@@ -8,7 +8,7 @@
 				<p class="mcenter" style="font-size: 17px">
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
 				</p>
-				<button class=" m-4 btn btn-outline-primary mt-5">Take me</button>
+				<button class=" m-4 btn btn-outline-primary mt-5">Let's Shop</button>
 			</div>
 			<div class="col hide">
 				<img src="<?= base_url('assets/img/banner.svg') ?> " class="img-fluid mx-right  " alt="Gambar">
