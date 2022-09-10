@@ -22,7 +22,7 @@
 		<section class="d-flex justify-content-center justify-content-lg-between  ">
 
 		</section>
-		<section class="">
+		<section class="" id="footer">
 			<div class="container text-center text-md-start mt-5">
 				<div class="row mt-3">
 					<div class="col-md-3 col-lg-4 col-xl-4 mx-auto mb-4">

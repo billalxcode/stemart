@@ -15,11 +15,13 @@
                     <a class="nav-link" href="<?= base_url('products') ?>">Produk</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Hubungi</a>
+                    <a class="nav-link" href="#footer">Hubungi</a>
                 </li>
             </ul>
             <div class="d-flex">
-                <button class="btn btn-primary accent">Login</button>
+                <a href="<?= base_url('login') ?>" class="btn btn-primary accent">
+                    Masuk
+                </a>
             </div>
         </div>
     </div>
