@@ -13,13 +13,14 @@
 </head>
 
 <body>
-    <?= $this->include("layout/navbar"); ?>
+	<script src="<?= base_url('assets/modules/jquery.min.js') ?>"></script>
+	<?= $this->include("layout/navbar"); ?>
 
-    <?= $this->renderSection('content'); ?>
+	<?= $this->renderSection('content'); ?>
 
 	<div class="container-fluid footer-bg text-white clearfix mt-5">
 		<section class="d-flex justify-content-center justify-content-lg-between  ">
-			
+
 		</section>
 		<section class="">
 			<div class="container text-center text-md-start mt-5">
@@ -67,7 +68,7 @@
 	<script src="<?= base_url('assets/native/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 	<script src="<?= base_url('assets/modules/aos/dist/aos.js') ?>"></script>
 	<script src="<?= base_url('assets/modules/fontawesome/js/all.min.js') ?>"></script>
-	
+
 	<script>
 		AOS.init();
 	</script>

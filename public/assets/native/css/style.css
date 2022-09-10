@@ -145,9 +145,50 @@
 	font-size: 60px;
 }
 
-.btn-primary:hover {
+.btn-boy {
+	color: white;
+	border: none;
 	-webkit-box-shadow: 0px 0px 20px 9px rgba(226, 240, 175, 0.75);
 	background-color: #656e46;
+}
+
+.btn-boy:hover {
+	color: white;
+	border: none;
+	-webkit-box-shadow: 0px 0px 20px 9px rgba(226, 240, 175, 0.75);
+	background-color: #4f5735;
+	border-color: #4f5735;
+}
+
+.btn-boy:focus {
+	color: white;
+	border: none;
+	-webkit-box-shadow: 0px 0px 20px 9px rgba(226, 240, 175, 0.75);
+	background-color: #4f5735;
+	border-color: #4f5735;
+}
+
+.btn-outline-boy {
+	color: white;
+	border: none;
+	-webkit-box-shadow: 0px 0px 20px 9px rgba(226, 240, 175, 0.75);
+	background-color: #656e46;
+}
+
+.btn-outline-boy:hover {
+	color: white;
+	border: none;
+	-webkit-box-shadow: 0px 0px 20px 9px rgba(226, 240, 175, 0.75);
+	background-color: #4f5735;
+	border-color: #4f5735;
+}
+
+.btn-outline-boy:focus {
+	color: white;
+	border: none;
+	-webkit-box-shadow: 0px 0px 20px 9px rgba(226, 240, 175, 0.75);
+	background-color: #4f5735;
+	border-color: #4f5735;
 }
 
 .round {
