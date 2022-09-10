@@ -142,6 +142,7 @@ class UserModel extends Model
     }
 
     public function get_customer_by_username($username) {
-        
+        $customer_data = $this->select('id,username,password,refresh_token,role')->where(['role' => 'customer', 'username' => $username])->first();
+        return $customer_data;
     }
 }
