@@ -30,8 +30,7 @@
 							SteMart.
 						</h2>
 						<p>
-							SteMart adalah toko online yang
-							dikelola oleh SMKN 1 Maja
+						Stemart merupakan aplikasi penyedia produk-produk teaching factory SMKN 1 Maja.
 						</p>
 					</div>
 					<div class="col-md-2 col-lg-2 col-xl-3 mx-auto mb-4">

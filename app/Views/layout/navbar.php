@@ -9,26 +9,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx mb-lg-0 nav-pills gap-4 mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link accent  text-white btn-primary " aria-current="page" style=" background-color: #656E46;" href="<?= base_url('') ?>">Home</a>
+                    <a class="nav-link accent  text-white btn-primary " aria-current="page" style=" background-color: #656E46;" href="<?= base_url('') ?>">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('products') ?>">Product</a>
+                    <a class="nav-link" href="<?= base_url('products') ?>">Produk</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Hubungi</a>
-                </li>
-                <li class="nav-item dropdown me-3">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        FAQ
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
                 </li>
             </ul>
             <div class="d-flex">
